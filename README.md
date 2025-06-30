@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# BMI Calculator React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based Body Mass Index calculator with the following features:
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Unit Conversion**: Switch between metric (cm, kg) and imperial (inches, lbs) units
+- **Real-time Validation**: Input validation with helpful error messages
+- **BMI Calculation**: Accurate BMI calculation with category classification
+- **Visual Indicator**: Color-coded BMI range bar with marker
+- **Health Recommendations**: Personalized health advice based on BMI category
+- **History Tracking**: Local storage of calculation history (up to 10 entries)
+- **Responsive Design**: Mobile-friendly interface
+- **Dark Mode Support**: Automatic dark/light theme detection
 
-### `npm start`
+## Setup Instructions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Create a new Vite React project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm create vite@latest week3-bmi-calculator -- --template react
+cd week3-bmi-calculator
+npm install
+```
 
-### `npm test`
+### 2. Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+week3-bmi-calculator/
+├── src/
+│   ├── components/
+│   │   ├── BMICalculator.jsx
+│   │   └── BMICalculator.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── package.json
+└── README.md
+```
 
-### `npm run build`
+### 3. Install and Run
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+npm run dev
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application will be available at `http://localhost:5173`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+1. **Select Units**: Choose between Metric (cm, kg) or Imperial (inches, lbs)
+2. **Enter Values**: Input your height and weight
+3. **Calculate**: Click "Calculate BMI" to get your result
+4. **View Results**: See your BMI value, category, and personalized recommendations
+5. **History**: View your calculation history in the bottom section
+6. **Clear**: Use "Clear" to reset the form or "Clear History" to remove saved calculations
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## BMI Categories
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Underweight**: BMI < 18.5
+- **Normal weight**: BMI 18.5 - 24.9
+- **Overweight**: BMI 25.0 - 29.9
+- **Obese**: BMI ≥ 30.0
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technical Implementation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### React Hooks Used
 
-## Learn More
+- **useState**: For managing component state (form inputs, results, errors)
+- **useEffect**: For localStorage operations and side effects
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Key Features
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Form Validation**: Real-time input validation with error messages
+- **State Management**: Centralized state using React hooks
+- **Local Storage**: Persistent storage of calculation history
+- **Responsive Design**: CSS Grid and Flexbox for layout
+- **Accessibility**: Proper ARIA labels and keyboard navigation
 
-### Code Splitting
+### File Organization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Each component has its own CSS file following the pattern:
+- `ComponentName.jsx` - React component
+- `ComponentName.css` - Component-specific styles
 
-### Analyzing the Bundle Size
+## Browser Support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Modern browsers with ES6+ support
+- Chrome, Firefox, Safari, Edge (latest versions)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-### Making a Progressive Web App
+## Development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To extend this application, you can:
 
-### Advanced Configuration
+1. Add more health metrics (body fat percentage, muscle mass)
+2. Include charts for tracking BMI over time
+3. Add user profiles and authentication
+4. Integrate with fitness APIs
+5. Add export functionality for health data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Vercel Link- https://bmi-calci-react.vercel.app/
